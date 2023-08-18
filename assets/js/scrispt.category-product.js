@@ -13,6 +13,10 @@ class Product {
         this.price = price;
         this.category = category;
     }
+    updateCategory(id, name){
+        const category = this.getCategoriaById(id);
+        category.name = name;
+    }
 }
 
 class ProductServirce{
