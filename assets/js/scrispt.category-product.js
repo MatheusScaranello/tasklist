@@ -1,28 +1,28 @@
-class Category{
+class Category {
     constructor(id, name) {
-this.id = id; 
-this.name = name;
-this.products = [];
+        this.id = id;
+        this.name = name;
+        this.products = [];
     }
 }
 
 class Product {
-    constructor(id, name, price, category){
+    constructor(id, name, price, category) {
         this.id = id;
-        this.name  = name;
+        this.name = name;
         this.price = price;
         this.category = category;
     }
-    
+
 }
 
-class ProductServirce{
-    constructor(){
+class ProductServirce {
+    constructor() {
         this.products = [];
         this.nextProductId = [];
     }
 
-    addProduct(name, price, category){
+    addProduct(name, price, category) {
         const id = this.nextProductId;
         this.nextProductId++;
 
@@ -31,45 +31,49 @@ class ProductServirce{
         this.products.push(product);
         category.products.push(product);
     }
-    getProductById(id){
+    getProductById(id) {
         return this.products.find((product) => product.id === id);
     }
-    addProduct(name){
+    addProduct(name) {
         const id = this.nextProductId;
-        this.nextProductId ++;
-        
+        this.nextProductId++;
+
         const product = new Product(id, name);
         this.products.push(product);
-            }
+    }
+    updateProduct(id, name) {
+        const product = this.getProductById(id);
+        product.name = name;
+    }
 }
 
 class CategoryService {
-    constructor(){
+    constructor() {
         this.categories = [];
         this.nextCategoryId = 1;
     }
 
-    addCategory(name){
-const id = this.nextCategoryId;
-this.nextCategoryId ++;
+    addCategory(name) {
+        const id = this.nextCategoryId;
+        this.nextCategoryId++;
 
-const category = new Category(id, name);
-this.categories.push(category);
+        const category = new Category(id, name);
+        this.categories.push(category);
     }
 
-    getCategoriaById(id){
+    getCategoriaById(id) {
         return this.categories.find((category) => category.id === id);
     }
 
-    updateCategory(id, name){
+    updateCategory(id, name) {
         const category = this.getCategoriaById(id);
         category.name = name;
     }
-    deleteCategory(id){
-const category = this.getCategoriaById(id);
-const index = this.categories.indexOf(category);
+    deleteCategory(id) {
+        const category = this.getCategoriaById(id);
+        const index = this.categories.indexOf(category);
 
-this.categories.splice(index, 1)
+        this.categories.splice(index, 1)
     }
 }
 
@@ -124,8 +128,14 @@ function UpdadeCategory(id, name) {
     console.log(categoriesList.categories);
 }
 
+function UpdadeProduct(id, name) {
+    productList.getProductById(id, name);
+
+    console.log(productList.products);
+}
+
 function editCategory(id, name) {
-    
+
     categoriesList.updateCategory(id, name);
     console.log(category.name);
 }
