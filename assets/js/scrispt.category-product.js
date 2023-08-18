@@ -90,15 +90,28 @@ function createCategory() {
 }
 
 function createProduct() {
-    const productName = "Choco";
-    const productPrice = 0.50;
-    const productCategory = categoriesList.categories[0];
+    const productName1 = "Choco";
+    const productName2 = "Sneakears";
+    const productName3 = "Livro";
+    const productPrice1 = 0.50;
+    const productPrice2 = 6.50;
+    const productPrice3 = 10.50;
+    const productCategory1 = categoriesList.categories[0];
+    const productCategory2 = categoriesList.categories[1];
+    const productCategory3 = categoriesList.categories[2];
 
-    productList.addProduct(productName, productPrice, productCategory);
+    productList.addProduct(productName1, productPrice1, productCategory1);
+    productList.addProduct(productName2, productPrice2, productCategory2);
+    productList.addProduct(productName3, productPrice3, productCategory3);
 
     console.log(productList.products);
 }
 
+function findProduct(id) {
+    const product = productList.getProductById(id);
+
+    console.log(product.name);
+}
 function findCategory(id) {
     const category = categoriesList.getCategoriaById(id);
 
