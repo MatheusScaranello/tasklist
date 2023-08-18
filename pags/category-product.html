@@ -11,20 +11,15 @@
 
 <body>
     <main>
-        <div>
-            <h2>Categorias</h2>
-            <button onclick="createCategory()">Criar Categoria</button>
-            <button onclick="findCategory(1)">Encontrar categoria</button>
-            <button onclick="editCategory(1 , 'doces')">edit categoria</button>
-            <button onclick="deleteCategory(1)">delete categoria</button>
-        </div>
+        <div id="container">
+            <h1>🛍️ Categorias & produtos</h1>
 
-        <div>
-            <h2>Produtos</h2>
-            <button onclick="createProduct()">Criar Produto</button>
-            <button onclick="findProduct(1)">Buscar Produto</button>
-            <button onclick="editCategory(1 , 'doces')">edit Produto</button>
-            <button onclick="deleteCategory(1)">delete Produto</button>
+            <div class="form-container">
+                <h2>📂 Criar Categoria</h2>
+                <label for="">Nome da categoria</label>
+                <input type="text" required>
+                <button>Criar Categoria</button>
+            </div>
         </div>
     </main>
 
