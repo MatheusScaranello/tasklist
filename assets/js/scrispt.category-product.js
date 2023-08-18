@@ -31,6 +31,16 @@ class ProductServirce{
         this.products.push(product);
         category.products.push(product);
     }
+    getProductById(id){
+        return this.products.find((product) => product.id === id);
+    }
+    addProduct(name){
+        const id = this.nextProductId;
+        this.nextProductId ++;
+        
+        const product = new Product(id, name);
+        this.products.push(product);
+            }
 }
 
 class CategoryService {
