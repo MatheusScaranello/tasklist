@@ -45,6 +45,12 @@ class ProductServirce {
         const product = this.getProductById(id);
         product.name = name;
     }
+    deleteProduct(id) {
+        const product = this.getProductById(id);
+        const index = this.products.indexOf(product);
+
+        this.products.splice(index, 1)
+    }
 }
 
 class CategoryService {
