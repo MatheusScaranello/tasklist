@@ -15,6 +15,22 @@ class Product {
     }
 }
 
+class ProductServirce{
+    constructor(){
+        this.products = [];
+        this.nextProductId = [];
+    }
+
+    addProduct(name, price, category){
+        const id = this.nextProductId;
+        this.nextProductId++;
+
+        const product = new Product(id, name, price, category);
+
+        this.products.push(product);
+    }
+}
+
 class CategoryService {
     constructor(){
         this.categories = [];
