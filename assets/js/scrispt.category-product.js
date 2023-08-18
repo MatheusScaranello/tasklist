@@ -28,7 +28,7 @@ class ProductServirce{
         const product = new Product(id, name, price, category);
 
         this.products.push(product);
-        category.products.push(product)
+        category.products.push(product);
     }
 }
 
@@ -45,6 +45,10 @@ this.nextCategoryId ++;
 const category = new Category(id, name);
 this.categories.push(category);
     }
+
+    getCategoriaById(){
+        return this.categories.find((category) => category.id === id);
+    }
 }
 
 const categoriesList = new CategoryService();
@@ -52,9 +56,13 @@ const productList = new ProductServirce();
 const category = new Category();
 
 function createCategory() {
-    const categoryName = "Candies";
+    const categoryName1 = "Candies";
+    const categoryName2 = "Shoes";
+    const categoryName3 = "Books";
 
-    categoriesList.addCategory(categoryName);
+    categoriesList.addCategory(categoryName1);
+    categoriesList.addCategory(categoryName2);
+    categoriesList.addCategory(categoryName3);
 
     console.log(categoriesList.categories);
 }
