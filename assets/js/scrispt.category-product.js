@@ -76,3 +76,9 @@ function createProduct() {
 
     console.log(productList.products);
 }
+
+function findCategory(id) {
+    const category = categoriesList.getCategoriaById(id);
+
+    console.log(category.name);
+}
