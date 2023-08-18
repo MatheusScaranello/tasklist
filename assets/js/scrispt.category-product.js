@@ -13,10 +13,7 @@ class Product {
         this.price = price;
         this.category = category;
     }
-    updateCategory(id, name){
-        const category = this.getCategoriaById(id);
-        category.name = name;
-    }
+    
 }
 
 class ProductServirce{
@@ -53,6 +50,17 @@ this.categories.push(category);
     getCategoriaById(id){
         return this.categories.find((category) => category.id === id);
     }
+
+    updateCategory(id, name){
+        const category = this.getCategoriaById(id);
+        category.name = name;
+    }
+    deleteCategory(id){
+const category = this.getCategoriaById(id);
+const index = this.categories.indexOf(category);
+
+this.categories.splice(index, 1)
+    }
 }
 
 const categoriesList = new CategoryService();
@@ -84,5 +92,17 @@ function createProduct() {
 function findCategory(id) {
     const category = categoriesList.getCategoriaById(id);
 
+    console.log(category.name);
+}
+
+function UpdadeCategory(id, name) {
+    categoriesList.updadeCategory(id, name);
+
+    console.log(categoriesList.categories);
+}
+
+function editCategory(id, name) {
+    
+    categoriesList.updateCategory(id, name);
     console.log(category.name);
 }
