@@ -46,7 +46,7 @@ const category = new Category(id, name);
 this.categories.push(category);
     }
 
-    getCategoriaById(){
+    getCategoriaById(id){
         return this.categories.find((category) => category.id === id);
     }
 }
