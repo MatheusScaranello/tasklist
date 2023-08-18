@@ -146,6 +146,11 @@ function editCategory(id, name) {
     console.log(category.name);
 }
 
+function deleteProduct(id) {
+    productList.deleteProduct(id);
+
+    console.log(productList.products);
+}
 function deleteCategory(id) {
     categoriesList.deleteCategory(id);
 
