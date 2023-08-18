@@ -92,6 +92,7 @@ function createCategory() {
 
     categoriesList.addCategory(categoryName);
 
+    displayCategories();
     clearFields();
 
     console.log(categoriesList.categories);
@@ -158,4 +159,14 @@ function deleteCategory(id) {
 function clearFields() {
     document.getElementById("categoryNameInput").value = "";
 
+}
+
+function displayCategories() {
+    let content = "";
+
+    categoriesList.categories.forEach((category) => {
+        content += `<li>${category.name}</li>`
+    });
+
+    document.getElementById("categoriesList").innerHTML = content;
 }
