@@ -45,7 +45,7 @@ class TaskList {
 
         document.getElementById("general").innerHTML += `
             <div class="newdivs" id="div${taskId}">
-                <p>${texto}</p>
+                <p id="text">${texto}</p>
                 <div>
                     <button class="bnts" id="bnt${taskId}" onclick="completeTask(${taskId})">
                         <i class="fa-solid fa-check" style="color: #ffffff;"></i>
@@ -116,5 +116,6 @@ function editTask(id) {
 }
 
 function changeButton(id) {
+    document.getElementById("Task").value = document.getElementById("text").innerText; 
     document.getElementById("add").innerHTML = '<button class="bnts1" onclick="editTask('+id+')" id="edit"><i class="fa-solid fa-pencil" style="color: #ffffff;"></i></button>'
 }
